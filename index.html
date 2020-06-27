@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  <style>
+    body {
+      background-color: #000;
+    }
+    .waveform {
+      position: relative;
+    }
+    [data-action="play"] {
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+    [data-action="play"]:hover {
+      background-color: transparent;
+      opacity: .9;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/22b3c68027.js" crossorigin="anonymous"></script>
+</head>
+<body class="h-100 pt-5">
+
+  <div class="container" style="max-width: 40rem;">
+    <div class="row align-items-center">
+      <div class="col-auto">
+        <button type="button" class="btn btn-dark" data-action="play">
+          <i class="fas fa-play"></i>
+          <i class="fas fa-pause d-none"></i>
+        </button>
+      </div>
+      <div class="col pr-0 pl-1">
+        <div class="waveform" data-path="/audios/glitter"></div>
+      </div>
+      <div class="col-auto text-white small">
+        <time class="duration"></time>
+      </div>
+    </div>
+  </div>
+
+  <script src="/node_modules/wavesurfer.js/dist/wavesurfer.min.js"></script>
+  <script src="/node_modules/wavesurfer.js/dist/plugin/wavesurfer.cursor.js"></script>
+  <script src="/js/main.js"></script>
+
+  <script>
+    document.write('<script src="http://' + (
+      location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+  </script>
+</body>
+</html>
